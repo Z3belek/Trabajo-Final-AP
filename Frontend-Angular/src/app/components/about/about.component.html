@@ -1,0 +1,85 @@
+<div class="container" *ngFor="let aboutme of aboutmes">
+  <h2 class="about-title">About me</h2>
+  <div class="about"  >
+      <div class="about-col1">
+        <div class="about-img">
+          <img src="{{aboutme.urlselfie}}" class="profile-img"/>
+            <button mat-icon-button (click)="openEditAbout(aboutme)">
+              <mat-icon class="mini">edit</mat-icon>
+            </button>
+        </div>
+      </div>
+      <div class="about-col2">
+        <div class="about-data">
+          <div class="about">
+            <div class="about-col3">
+              <p>{{aboutme.dtexto}}</p>
+              <a href="{{aboutme.urlcv}}" mat-flat-button>Descargar CV</a>
+            </div>
+            <div class="about-col3">
+              <div class="about-skill">
+                <div class="about-skill-info">
+                  <h4 class="about-skill-name">{{aboutme.skill1}}</h4>
+                  <span class="about-skill-percentage">{{aboutme.percentage1}}%</span>
+                </div>
+                <mat-progress-bar mode="determinate" value="{{aboutme.percentage1}}"></mat-progress-bar>
+              </div>
+              <div class="about-skill">
+                <div class="about-skill-info">
+                  <h4 class="about-skill-name">{{aboutme.skill2}}</h4>
+                  <span class="about-skill-percentage">{{aboutme.percentage2}}%</span>
+                </div>
+                <mat-progress-bar mode="determinate" value="{{aboutme.percentage2}}"></mat-progress-bar>
+              </div>
+              <div class="about-skill">
+                <div class="about-skill-info">
+                  <h4 class="about-skill-name">{{aboutme.skill3}}</h4>
+                  <span class="about-skill-percentage">{{aboutme.percentage3}}%</span>
+                </div>
+                <mat-progress-bar mode="determinate" value="{{aboutme.percentage3}}"></mat-progress-bar>
+              </div>
+          </div>
+        </div>
+        </div>
+        
+    </div>
+  </div>
+  <div class="about part2">
+    <div class="about-col4">
+      <div class="about-item">
+          <mat-icon class="about-icon icon-folder"></mat-icon>
+          <div class="about-item-detail">
+            <h3 class="about-number">{{aboutme.pcompletados}}</h3>
+            <p>Projects completed</p>
+          </div>
+      </div>
+    </div>
+      <div class="about-col4">
+      <div class="about-item">
+          <mat-icon class="about-icon icon-cup"></mat-icon>
+          <div class="about-item-detail">
+            <h3 class="about-number">{{aboutme.ctomados}}</h3>
+            <p>Projects completed</p>
+          </div>
+      </div>
+      </div>
+      <div class="about-col4">
+      <div class="about-item">
+          <mat-icon class="about-icon icon-people"></mat-icon>
+          <div class="about-item-detail">
+            <h3 class="about-number">{{aboutme.csatisfactorios}}</h3>
+            <p>Projects completed</p>
+          </div>
+      </div>
+      </div>
+      <div class="about-col4">
+        <div class="about-item">
+          <mat-icon class="about-icon icon-badge"></mat-icon>
+          <div class="about-item-detail">
+            <h3 class="about-number">{{aboutme.premios}}</h3>
+            <p>Projects completed</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

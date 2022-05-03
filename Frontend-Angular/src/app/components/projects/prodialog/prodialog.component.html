@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>{{titleTxt}} proyecto</h1>
+<div mat-dialog-content>
+  <form [formGroup]="proForm">
+    <mat-form-field  appearance="outline" class="full-width">
+      <mat-label>Titulo del proyecto</mat-label>
+      <input formControlName="title" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Tipo de proyecto</mat-label>
+      <input formControlName="type" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Desarrollado para</mat-label>
+      <input formControlName="place" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Imagen del proyecto</mat-label>
+      <input formControlName="imgurl" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Descripción</mat-label>
+      <textarea  formControlName="dtexto" matInput></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'"> 
+  <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="agregarExperience()">{{actionBtn}}</button>
+</div>

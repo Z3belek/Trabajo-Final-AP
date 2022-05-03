@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="ap">
+    <img src="../../../assets/img/aplogo.png" alt="">
+  </div>
+  <div class="profile" *ngFor="let aboutme of aboutmes">
+    <div class="profile-sub">
+      <span>I'm </span>
+      <ngx-sbz-type-delete
+      [textColor]="'white'"
+      [wordArray]="['Web developer', 'Web Designer']"
+      [typingSpeedMilliseconds]="150"
+      [deleteSpeedMilliseconds]="150"
+      [fontSize]="'20px'">
+      </ngx-sbz-type-delete>
+    </div>
+    <img src="{{aboutme.urlselfie}}" alt="" class="profile-img">
+    <h1>{{aboutme.name}}</h1>
+    <div class="profile-links">
+      <a class="link social-icon" mat-raised-button
+      matTooltip="Github" href="{{aboutme.github}}">
+      <i class="links icon-github"></i>
+      </a>
+      <a class="link social-icon" mat-raised-button
+      matTooltip="Linkedin" href="{{aboutme.linkedin}}">
+      <i class="links icon-linkedin"></i>
+      </a>
+      <a class="link social-icon" mat-raised-button
+      matTooltip="Mail" href="{{aboutme.mail}}">
+      <i class="links icon-mail"></i>
+      </a>
+      <a class="link social-icon" mat-raised-button
+      matTooltip="Pinterest" href="{{aboutme.pinterest}}">
+      <i class="links icon-pinte"></i>
+      </a>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="projects-title">Projects
+    <div class="project-add">
+      <button mat-fab color="primary"(click)="openAddProject()" matTooltip="Agregar Proyecto">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </h2>
+  <div class="projects">
+    <div class="projects-col1"*ngFor="let project of projects">
+      <a (click)="openSingleProject(project)" class="projects-modal">
+        <div class="project-item" >
+          <div class="project-item-detail">
+            <span class="project-item-class">{{project.title}}</span>
+            <h4 class="project-item-title">{{project.type}}</h4>
+            <span class="project-item-more"><i class="icon-options"></i></span>
+          </div>
+          <div class="project-item-thumbail">
+            <img src="{{project.imgurl}}" alt="" class="project-item-img">
+            <div class="project-item-mask"></div>
+          </div>
+        </div>
+      </a>
+      <div class="experience-title-buttons">
+        <button mat-icon-button (click)="openEditProject(project)">
+          <mat-icon class="mini">edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon class="mini">delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

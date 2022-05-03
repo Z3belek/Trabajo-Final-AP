@@ -1,0 +1,65 @@
+.project-container {
+  display: grid;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #555555;
+}
+
+.project-header .mat-icon {
+  height: auto;
+  width: auto;
+}
+
+.project-folder-icon {
+  max-width: 5%;
+  background-color: #18191a;
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.project-title-text {
+  flex: 0 0 95%;
+  max-width: 95%;
+}
+.project-img {
+  width: 1rem;
+}
+
+.project-info {
+  display: flex;
+}
+
+.project-img {
+  flex: 0 0 30%;
+  max-width: 30%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.project-description {
+  display: flex;
+  padding: 2rem;
+  width: 100%;
+  flex-direction: column;
+}
+
+.project-data {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #555555;
+  padding: 0.5rem;
+}
+
+.project-sub {
+  color:#515151;
+  flex: 0 0 22%;
+  max-width: 22%;
+}
+.project-container h2 {
+  margin: 0;
+}

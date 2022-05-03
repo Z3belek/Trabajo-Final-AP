@@ -1,0 +1,112 @@
+.container {
+  height: 100%;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.ap {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.ap img {
+  height: 2rem;
+  opacity: 0.05;
+}
+.profile h1 {
+  color: #FFF;
+  font-size: 36px;
+}
+
+.profile-img {
+  max-width: 10rem;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.profile-sub {
+  top: 29%;
+  left: 53%;
+  position: absolute;
+  background-color: #2374e1;
+  border-radius: 0.5rem;
+  display: flex;
+  padding: 0.1rem 0.5rem;
+  color: #fff;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.profile-sub:after {
+  content: "";
+  position:absolute;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #2374e1;
+  transform:rotate(-35deg);
+  left:0rem; 
+  top: 1.7rem;
+}
+
+.profile-links {
+  display: flex;
+  gap: 1rem;
+  margin: auto;
+  justify-content: center;
+}
+
+.link {
+  opacity: 0.3;
+  transition: 300ms;
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+.icon-github:before{
+  content: url(../../../assets/img/github.svg);
+  object-fit: cover;
+}
+.icon-linkedin:before{
+  content: url(../../../assets/img/linkedin.svg);
+  object-fit: cover;
+}
+.icon-mail:before{
+  content: url(../../../assets/img/mail.svg);
+  object-fit: cover;
+}
+.icon-pinte:before{
+  content: url(../../../assets/img/pinterest.svg);
+}
+
+
+[class*=" icon-"]:before,[class^=icon-]:before{
+  font-weight:400;
+  display:contents;
+  text-decoration:inherit;
+  width:25px;
+  margin-right:0;
+  text-align:center;
+  font-variant:normal;
+  text-transform:none;
+  line-height:0;
+  margin-left:0;
+}
+
+.mat-raised-button {
+  line-height: 0;
+  padding: 0;
+  min-width: 25px;
+  background-color: transparent;
+}
+
+.mat-raised-button:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}

@@ -1,0 +1,176 @@
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 920px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 920px;
+  }
+}
+
+@media (min-width: 1366px){
+  .container {
+    max-width: 1080px;
+  }
+}
+
+.experience-title {
+  font-size: 36px;
+  position: relative;
+  margin: 0px 0px 0px 14px;
+  margin-top: 5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .experience-title {
+    margin-top: 3rem;
+  }
+}
+
+.experience-title::before {
+  content: "";
+  background-image: url(../../../assets/img/dots-bg.svg);
+  display: block;
+  height: 37px;
+  left: -14px;
+  top: -14px;
+  position: absolute;
+  width: 37px;
+}
+
+.experience {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@media (max-width: 768px){
+  .experience {
+    gap: 3rem;
+  }
+}
+
+.experience-col1 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px){
+  .experience-col1 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.experience-add {
+  position: absolute;
+  z-index: 2;
+  right: 30px;
+  top: -30px;
+}
+.experience-timeline {
+  padding: 30px;
+  background: #242526;
+  border-radius: 20px !important;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.experience-timeline-container {
+  padding-left: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+}
+
+.experience-title-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.experience-title-buttons .mini {
+  font-size: 15px;
+  color: #5b5c60;
+}
+.experience-timeline .edu::after {
+  content: "";
+  background: #242526;
+  font-family: "simple-line-icons";
+  font-size: 24px;
+  color: #2374e1;
+  position: absolute;
+  left: -7px;
+  top: 0;
+  z-index: 1;
+}
+
+.experience-timeline .job::after {
+  content: "";
+  background: #242526;
+  font-family: "simple-line-icons";
+  font-size: 24px;
+  color: #2374e1;
+  position: absolute;
+  left: -7px;
+  top: 0;
+  z-index: 1;
+}
+
+.experience-timeline-info {
+  position: relative;
+}
+
+.experience-timeline-date {
+  font-size: 14px;
+  color: #636363;
+}
+
+.experience-timeline-title {
+  font-size: 20px;
+  margin: 4px 0 -10px 0;
+}
+
+.experience-timeline-place {
+  font-size: 14px;
+  color: #636363;
+}
+
+.experience-timeline-info p {
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.experience-line {
+  position: absolute;
+  width: 1px;
+  background-color: #2374e1;
+  top: 30px;
+  bottom: 30px;
+  left: 34px;
+}

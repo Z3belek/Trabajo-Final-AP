@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{titleTxt}} trabajo</h1>
+<div mat-dialog-content>
+  <form [formGroup]="jobForm">
+    <mat-form-field  appearance="outline" class="full-width">
+      <mat-label>Puesto de trabajo</mat-label>
+      <input formControlName="role" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Lugar</mat-label>
+      <input formControlName="place" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Fecha de inicio</mat-label>
+      <input formControlName="year1" matInput [matDatepicker]="picker1">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Fecha de finalizacion</mat-label>
+      <input formControlName="year2" matInput [matDatepicker]="picker2">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Descripción</mat-label>
+      <textarea  formControlName="dtexto" matInput></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'"> 
+  <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="agregarExperience()">{{actionBtn}}</button>
+</div>

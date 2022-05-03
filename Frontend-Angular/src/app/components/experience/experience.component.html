@@ -1,0 +1,61 @@
+<div class="container">
+  <h2 class="experience-title">Experience</h2>
+  <div class="experience">
+    <div class="experience-col1">
+      <div class="experience-add">
+        <button mat-fab color="primary" (click)="openAddEdu()" matTooltip="Agregar Educación">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <div class="experience-timeline">
+        <div class="experience-timeline-container edu" *ngFor="let education of educations">
+          <div class="experience-timeline-info">
+            <span class="experience-timeline-date">{{education.year1 | date:'yyyy'}} - {{education.year2 | date:'yyyy'}}</span>
+            <div class="experience-title-container">
+              <h3 class="experience-timeline-title">{{education.level}}</h3>
+              <div class="experience-title-buttons">
+                <button mat-icon-button (click)="openEditEdu(education)">
+                  <mat-icon class="mini">edit</mat-icon>
+                </button>
+                <button mat-icon-button>
+                  <mat-icon class="mini">delete</mat-icon>
+                </button>
+              </div>
+            </div>
+            <span class="experience-timeline-place">({{education.place}})</span>
+            <p>{{education.dtexto}}</p>
+          </div>
+        </div>
+        <span class="experience-line"></span>
+      </div>
+    </div>
+    <div class="experience-col1">
+      <div class="experience-add">
+        <button mat-fab color="primary"(click)="openAddJob()" matTooltip="Agregar Trabajo">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <div class="experience-timeline">
+        <div class="experience-timeline-container job" *ngFor="let experience of experiences">
+          <div class="experience-timeline-info">
+            <span class="experience-timeline-date">{{experience.year1 | date:'yyyy'}} - {{experience.year2 | date:'yyyy'}}</span>
+            <div class="experience-title-container">
+              <h3 class="experience-timeline-title">{{experience.role}}</h3>
+              <div class="experience-title-buttons">
+                <button mat-icon-button (click)="openEditJob(experience)">
+                  <mat-icon class="mini">edit</mat-icon>
+                </button>
+                <button mat-icon-button>
+                  <mat-icon class="mini">delete</mat-icon>
+                </button>
+              </div>
+            </div>
+            <span class="experience-timeline-place">({{experience.place}})</span>
+            <p>{{experience.dtexto}}</p>
+          </div>
+        </div>
+        <span class="experience-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
