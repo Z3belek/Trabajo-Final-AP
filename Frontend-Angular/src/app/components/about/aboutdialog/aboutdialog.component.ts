@@ -71,7 +71,7 @@ export class AboutdialogComponent implements OnInit {
           config.verticalPosition = this.verticalPosition;
           config.horizontalPosition = this.horizontalPosition;
           config.duration = 1500;
-          this._snackBar.open("Modificado correctamente", "" , config);
+          this._snackBar.open("Successfully modified", "" , config);
           this.editaboutForm.reset();
           this.dialogRef.close('update');
       },
@@ -81,7 +81,7 @@ export class AboutdialogComponent implements OnInit {
           config.verticalPosition = this.verticalPosition;
           config.horizontalPosition = this.horizontalPosition;
           config.duration = 1500;
-          this._snackBar.open("Error al modificar", "" , config);
+          this._snackBar.open("Failed to modify", "" , config);
       }
     })
   }

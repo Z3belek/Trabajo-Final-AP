@@ -20,6 +20,7 @@ import { EdudialogComponent } from './components/experience/edudialog/edudialog.
 import { SingleProjectComponent } from './components/projects/single-project/single-project.component';
 import { ProdialogComponent } from './components/projects/prodialog/prodialog.component';
 import { AboutdialogComponent } from './components/about/aboutdialog/aboutdialog.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AboutdialogComponent } from './components/about/aboutdialog/aboutdialog
     SingleProjectComponent,
     ProdialogComponent,
     AboutdialogComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,

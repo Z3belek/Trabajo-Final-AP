@@ -2,22 +2,35 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EducationService, Education } from 'src/app/services/education.service';
 import { ExperienceService, Experience } from 'src/app/services/experience.service';
+import { ConfirmComponent } from '../confirm/confirm.component';
 import { EdudialogComponent } from './edudialog/edudialog.component';
 import { ExpdialogComponent } from './expdialog/expdialog.component';
-
+import { ConfirmService } from 'src/app/services/confirm.service';
+import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit {
-
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   educations: any=[];
   experiences: any=[];
-  constructor(private educationService: EducationService,private experienceService: ExperienceService, public dialog: MatDialog) { }
+  constructor(private educationService: EducationService,
+    private experienceService: ExperienceService,
+    public dialog: MatDialog,
+    private confirm: ConfirmService,
+    private _snackBar: MatSnackBar) { }
 
   openAddEdu() {
     this.dialog.open(EdudialogComponent,{
+      panelClass: "dialog-responsive"
+    });
+  }
+
+  openAddJob() {
+    this.dialog.open(ExpdialogComponent,{
       panelClass: "dialog-responsive"
     });
   }
@@ -29,18 +42,59 @@ export class ExperienceComponent implements OnInit {
     })
   }
 
-  openAddJob() {
-    this.dialog.open(ExpdialogComponent,{
-      panelClass: "dialog-responsive"
-    });
-  }
-
   openEditJob(education: any) {
     this.dialog.open(ExpdialogComponent,{
       panelClass: "dialog-responsive",
       data:education
     })
   }
+  
+
+
+  openDeleteEdu(id: number) {
+    this.confirm
+      .confirmDialog({
+        title: 'Delete education',
+        message: 'Are you sure to delete this education?',
+        confirmCaption: 'Yes',
+        cancelCaption: 'No',
+      })
+      .subscribe((yes) => {
+        if (yes) this.educationService.deleteEducation(id).subscribe(
+          res=>{this.ngOnInit();
+            let config = new MatSnackBarConfig
+            config.panelClass = ['green-snackbar'];
+            config.verticalPosition = this.verticalPosition;
+            config.horizontalPosition = this.horizontalPosition;
+            config.duration = 1500;
+            this._snackBar.open("Removed successfully", "" , config);},
+          err=>console.log(err)
+        );
+      });
+  }
+
+  openDeleteJob(id: number) {
+    this.confirm
+      .confirmDialog({
+        title: 'Delete job',
+        message: 'Are you sure to delete this Job?',
+        confirmCaption: 'Yes',
+        cancelCaption: 'No',
+      })
+      .subscribe((yes) => {
+        if (yes) this.experienceService.deleteExperience(id).subscribe(
+          res=>{this.ngOnInit();
+            let config = new MatSnackBarConfig
+            config.panelClass = ['green-snackbar'];
+            config.verticalPosition = this.verticalPosition;
+            config.horizontalPosition = this.horizontalPosition;
+            config.duration = 1500;
+            this._snackBar.open("Removed successfully", "" , config);},
+          err=>console.log(err)
+        );
+      });
+  }
+
   ngOnInit(): void {
     this.listarEducation();
     this.listarExperience();
@@ -64,21 +118,6 @@ export class ExperienceComponent implements OnInit {
         this.experiences=res;
         console.log(res);
       },
-      err=>console.log(err)
-    );
-  }
-  
-  eliminarEdu(id:number)
-  {
-    this.educationService.deleteEducation(id).subscribe(
-      res=>{this.ngOnInit();},
-      err=>console.log(err)
-    );
-  }
-  eliminarExp(id:number)
-  {
-    this.experienceService.deleteExperience(id).subscribe(
-      res=>{this.ngOnInit();},
       err=>console.log(err)
     );
   }

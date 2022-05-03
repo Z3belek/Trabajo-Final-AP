@@ -3,7 +3,7 @@
   <form [formGroup]="editaboutForm">
     <mat-form-field appearance="outline" class="full-width">
       <input formControlName="name" matInput>
-      <mat-label>Nombre completo</mat-label>
+      <mat-label>Full name</mat-label>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width">
       <input formControlName="skill1" matInput>
@@ -39,58 +39,58 @@
       <mat-label>Skill 3</mat-label>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Link de Imagen de perfil</mat-label>
+      <mat-label>Profile Picture Link</mat-label>
       <input formControlName="urlselfie" matInput>
       <mat-icon matSuffix>file_download</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Link de descarga CV</mat-label>
+      <mat-label>CV download link</mat-label>
       <input formControlName="urlcv" matInput>
       <mat-icon matSuffix>file_download</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Link de Linkedin</mat-label>
+      <mat-label>Linkedin link</mat-label>
       <input formControlName="linkedin" matInput>
       <mat-icon matSuffix>file_download</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Link Github</mat-label>
+      <mat-label>Github link</mat-label>
       <input formControlName="github" matInput>
       <mat-icon matSuffix>file_download</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Mail de contacto</mat-label>
+      <mat-label>Contact email</mat-label>
       <input formControlName="mail" matInput>
       <mat-icon matSuffix>file_download</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Link de Pinterest</mat-label>
+      <mat-label>Pinterest link</mat-label>
       <input formControlName="pinterest" matInput>
       <mat-icon matSuffix>file_download</mat-icon>
     </mat-form-field>
     <mat-form-field  appearance="outline" class="mid-width">
-      <mat-label>Proyectos finalizados</mat-label>
+      <mat-label>Completed projects</mat-label>
       <input formControlName="pcompletados" matInput>
     </mat-form-field>
     <mat-form-field  appearance="outline" class="mid-width">
-      <mat-label>Tazas de cafe tomadas</mat-label>
+      <mat-label>Coffees drunk</mat-label>
       <input formControlName="ctomados" matInput>
     </mat-form-field>
     <mat-form-field  appearance="outline" class="mid-width">
-      <mat-label>Clientes satisfechos</mat-label>
+      <mat-label>Satisfied customers</mat-label>
       <input formControlName="csatisfactorios" matInput>
     </mat-form-field>
     <mat-form-field  appearance="outline" class="mid-width">
-      <mat-label>Reconocimientos</mat-label>
+      <mat-label>Acknowledgments</mat-label>
       <input formControlName="premios" matInput>
     </mat-form-field>
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Descripción</mat-label>
+      <mat-label>Description</mat-label>
       <textarea  formControlName="dtexto" matInput></textarea>
     </mat-form-field>
   </form>
 </div>
 <div mat-dialog-actions [align]="'end'"> 
-  <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
-  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="modificar()">Actualizar</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="modificar()">Update</button>
 </div>

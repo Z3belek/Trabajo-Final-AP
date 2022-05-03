@@ -11,8 +11,8 @@ import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnack
 })
 export class EdudialogComponent implements OnInit {
   eduForm !: FormGroup;
-  actionBtn : string = "Añadir"
-  titleTxt : string = "Agregar"
+  actionBtn : string = "Add"
+  titleTxt : string = "New"
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   constructor(private educationService: EducationService,
@@ -30,8 +30,8 @@ export class EdudialogComponent implements OnInit {
       dtexto : ['',Validators.required]
     });
     if (this.editData) {
-      this.actionBtn = "Guardar";
-      this.titleTxt = "Modificar"
+      this.actionBtn = "Save";
+      this.titleTxt = "Modify"
       this.eduForm.controls['year1'].setValue(this.editData.year1);
       this.eduForm.controls['year2'].setValue(this.editData.year2);
       this.eduForm.controls['level'].setValue(this.editData.level);
@@ -50,7 +50,7 @@ export class EdudialogComponent implements OnInit {
             config.verticalPosition = this.verticalPosition;
             config.horizontalPosition = this.horizontalPosition;
             config.duration = 1500;
-            this._snackBar.open("Agregado correctamente", "" , config);
+            this._snackBar.open("Successfully added", "" , config);
             this.eduForm.reset();
             this.dialogRef.close('save');
           },
@@ -60,7 +60,7 @@ export class EdudialogComponent implements OnInit {
             config.verticalPosition = this.verticalPosition;
             config.horizontalPosition = this.horizontalPosition;
             config.duration = 1500;
-            this._snackBar.open("Error al agregar", "" , config);
+            this._snackBar.open("Failed to add", "" , config);
           }
         })
       }
@@ -77,7 +77,7 @@ export class EdudialogComponent implements OnInit {
           config.verticalPosition = this.verticalPosition;
           config.horizontalPosition = this.horizontalPosition;
           config.duration = 1500;
-          this._snackBar.open("Modificado correctamente", "" , config);
+          this._snackBar.open("Successfully modified", "" , config);
           this.eduForm.reset();
           this.dialogRef.close('update');
       },
@@ -87,7 +87,7 @@ export class EdudialogComponent implements OnInit {
           config.verticalPosition = this.verticalPosition;
           config.horizontalPosition = this.horizontalPosition;
           config.duration = 1500;
-          this._snackBar.open("Error al modificar", "" , config);
+          this._snackBar.open("Failed to modify", "" , config);
       }
     })
   }

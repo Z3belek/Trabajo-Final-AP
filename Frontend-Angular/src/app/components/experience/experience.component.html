@@ -3,7 +3,7 @@
   <div class="experience">
     <div class="experience-col1">
       <div class="experience-add">
-        <button mat-fab color="primary" (click)="openAddEdu()" matTooltip="Agregar Educación">
+        <button mat-fab color="primary" (click)="openAddEdu()" matTooltip="Add Education">
           <mat-icon>add</mat-icon>
         </button>
       </div>
@@ -17,7 +17,7 @@
                 <button mat-icon-button (click)="openEditEdu(education)">
                   <mat-icon class="mini">edit</mat-icon>
                 </button>
-                <button mat-icon-button>
+                <button mat-icon-button (click)="openDeleteEdu(education.id)">
                   <mat-icon class="mini">delete</mat-icon>
                 </button>
               </div>
@@ -31,7 +31,7 @@
     </div>
     <div class="experience-col1">
       <div class="experience-add">
-        <button mat-fab color="primary"(click)="openAddJob()" matTooltip="Agregar Trabajo">
+        <button mat-fab color="primary"(click)="openAddJob()" matTooltip="Add Job">
           <mat-icon>add</mat-icon>
         </button>
       </div>
@@ -45,7 +45,7 @@
                 <button mat-icon-button (click)="openEditJob(experience)">
                   <mat-icon class="mini">edit</mat-icon>
                 </button>
-                <button mat-icon-button>
+                <button mat-icon-button (click)="openDeleteJob(experience.id)">
                   <mat-icon class="mini">delete</mat-icon>
                 </button>
               </div>

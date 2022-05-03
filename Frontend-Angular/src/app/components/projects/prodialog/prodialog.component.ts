@@ -12,8 +12,8 @@ import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnack
 })
 export class ProdialogComponent implements OnInit {
   proForm !: FormGroup;
-  actionBtn : string = "Añadir"
-  titleTxt : string = "Agregar"
+  actionBtn : string = "Add"
+  titleTxt : string = "New"
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   constructor(private projectService: ProjectService,
@@ -31,8 +31,8 @@ export class ProdialogComponent implements OnInit {
         dtexto : ['',Validators.required]
       });
       if (this.editData) {
-        this.actionBtn = "Guardar";
-        this.titleTxt = "Modificar"
+        this.actionBtn = "Save";
+        this.titleTxt = "Modify"
         this.proForm.controls['title'].setValue(this.editData.title);
         this.proForm.controls['type'].setValue(this.editData.type);
         this.proForm.controls['place'].setValue(this.editData.place);
@@ -51,7 +51,7 @@ export class ProdialogComponent implements OnInit {
               config.verticalPosition = this.verticalPosition;
               config.horizontalPosition = this.horizontalPosition;
               config.duration = 1500;
-              this._snackBar.open("Agregado correctamente", "" , config);
+              this._snackBar.open("Successfully added", "" , config);
               this.proForm.reset();
               this.dialogRef.close('save');
             },
@@ -61,7 +61,7 @@ export class ProdialogComponent implements OnInit {
               config.verticalPosition = this.verticalPosition;
               config.horizontalPosition = this.horizontalPosition;
               config.duration = 1500;
-              this._snackBar.open("Error al agregar", "" , config);
+              this._snackBar.open("Failed to add", "" , config);
             }
           })
         }
@@ -78,7 +78,7 @@ export class ProdialogComponent implements OnInit {
             config.verticalPosition = this.verticalPosition;
             config.horizontalPosition = this.horizontalPosition;
             config.duration = 1500;
-            this._snackBar.open("Modificado correctamente", "" , config);
+            this._snackBar.open("Successfully modified", "" , config);
             this.proForm.reset();
             this.dialogRef.close('update');
         },
@@ -88,7 +88,7 @@ export class ProdialogComponent implements OnInit {
             config.verticalPosition = this.verticalPosition;
             config.horizontalPosition = this.horizontalPosition;
             config.duration = 1500;
-            this._snackBar.open("Error al modificar", "" , config);
+            this._snackBar.open("Failed to modify", "" , config);
         }
       })
     }

@@ -2,21 +2,21 @@ export const navbarData = [
   {
     routeLink: 'home',
     icon: 'home',
-    label: 'Inicio'
+    label: 'Home'
   },
   {
     routeLink: 'about',
     icon: 'person',
-    label: 'Acerca de mi'
+    label: 'About me'
   },
   {
     routeLink: 'experience',
     icon: 'school',
-    label: 'Experiencia'
+    label: 'Experience'
   },
   {
     routeLink: 'projects',
     icon: 'folder_copy',
-    label: 'Proyectos'
+    label: 'Proyects'
   }
 ]
