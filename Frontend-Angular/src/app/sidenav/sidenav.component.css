@@ -53,3 +53,6 @@
 .mat-toolbar.mat-primary {
   background: transparent;
 }
+.separator {
+  flex: 1 1 auto;
+}

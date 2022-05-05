@@ -54,6 +54,7 @@ export class ExpdialogComponent implements OnInit {
             this._snackBar.open("Successfully added", "" , config);
             this.jobForm.reset();
             this.dialogRef.close('save');
+            window.location.reload();
           },
           error:()=>{
             let config = new MatSnackBarConfig
@@ -81,6 +82,7 @@ export class ExpdialogComponent implements OnInit {
           this._snackBar.open("Successfully modified", "" , config);
           this.jobForm.reset();
           this.dialogRef.close('update');
+          window.location.reload();
       },
       error:()=>{
         let config = new MatSnackBarConfig

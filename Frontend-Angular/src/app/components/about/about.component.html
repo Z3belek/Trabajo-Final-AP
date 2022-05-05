@@ -4,7 +4,7 @@
       <div class="about-col1">
         <div class="about-img">
           <img src="{{aboutme.urlselfie}}" class="profile-img"/>
-            <button mat-icon-button (click)="openEditAbout(aboutme)">
+            <button mat-icon-button (click)="openEditAbout(aboutme)" *ngIf="showAdmin">
               <mat-icon class="mini">edit</mat-icon>
             </button>
         </div>

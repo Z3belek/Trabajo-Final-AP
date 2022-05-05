@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="projects-title">Projects
     <div class="project-add">
-      <button mat-fab color="primary"(click)="openAddProject()" matTooltip="Add Project">
+      <button mat-fab color="primary"(click)="openAddProject()" matTooltip="Add Project" *ngIf="showAdmin">
         <mat-icon>add</mat-icon>
       </button>
     </div>
@@ -22,10 +22,10 @@
         </div>
       </a>
       <div class="experience-title-buttons">
-        <button mat-icon-button (click)="openEditProject(project)">
+        <button mat-icon-button (click)="openEditProject(project)" *ngIf="showAdmin">
           <mat-icon class="mini">edit</mat-icon>
         </button>
-        <button mat-icon-button (click)="openDeletePro(project.id)">
+        <button mat-icon-button (click)="openDeletePro(project.id)" *ngIf="showAdmin">
           <mat-icon class="mini">delete</mat-icon>
         </button>
       </div>

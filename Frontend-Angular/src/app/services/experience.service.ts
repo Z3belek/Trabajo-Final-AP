@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class ExperienceService {
-  url='http://localhost:8080/api/experience';
+  url='http://localhost:8080/api/data/all/experience';
   constructor(private http: HttpClient) { }
   
   getExperience():Observable<any>

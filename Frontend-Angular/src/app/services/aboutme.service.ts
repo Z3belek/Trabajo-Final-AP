@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AboutmeService {
-  url='http://localhost:8080/api/aboutme';
+  url='http://localhost:8080/api/data/all/aboutme';
   constructor(private http: HttpClient) { }
   
   getAboutme():Observable<any>

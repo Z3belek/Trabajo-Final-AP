@@ -21,6 +21,7 @@ import { SingleProjectComponent } from './components/projects/single-project/sin
 import { ProdialogComponent } from './components/projects/prodialog/prodialog.component';
 import { AboutdialogComponent } from './components/about/aboutdialog/aboutdialog.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     ProdialogComponent,
     AboutdialogComponent,
     ConfirmComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

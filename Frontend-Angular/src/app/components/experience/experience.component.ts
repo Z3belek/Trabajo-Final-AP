@@ -6,6 +6,7 @@ import { ConfirmComponent } from '../confirm/confirm.component';
 import { EdudialogComponent } from './edudialog/edudialog.component';
 import { ExpdialogComponent } from './expdialog/expdialog.component';
 import { ConfirmService } from 'src/app/services/confirm.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-experience',
@@ -17,11 +18,15 @@ export class ExperienceComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   educations: any=[];
   experiences: any=[];
+  isLoggedIn = false;
+  private roles: string[] = [];
+  showAdmin = false;
   constructor(private educationService: EducationService,
     private experienceService: ExperienceService,
     public dialog: MatDialog,
     private confirm: ConfirmService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private tokenStorageService : TokenStorageService) { }
 
   openAddEdu() {
     this.dialog.open(EdudialogComponent,{
@@ -98,6 +103,13 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {
     this.listarEducation();
     this.listarExperience();
+
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;  
+      this.showAdmin = this.roles.includes('ROLE_ADMIN');
+    }
   }
 
   listarEducation()

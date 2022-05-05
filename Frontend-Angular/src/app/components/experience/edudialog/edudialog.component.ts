@@ -53,6 +53,7 @@ export class EdudialogComponent implements OnInit {
             this._snackBar.open("Successfully added", "" , config);
             this.eduForm.reset();
             this.dialogRef.close('save');
+            window.location.reload();
           },
           error:()=>{
             let config = new MatSnackBarConfig
@@ -80,6 +81,7 @@ export class EdudialogComponent implements OnInit {
           this._snackBar.open("Successfully modified", "" , config);
           this.eduForm.reset();
           this.dialogRef.close('update');
+          window.location.reload();
       },
       error:()=>{
         let config = new MatSnackBarConfig

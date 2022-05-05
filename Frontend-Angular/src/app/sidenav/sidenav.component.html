@@ -13,6 +13,20 @@
         </mat-list-item>
       </a>
     </mat-nav-list>
+    <mat-nav-list *ngIf="!isLoggedIn">
+      <a class="sidenav-nav-link" (click)="loginB()">
+        <mat-list-item matTooltip="Login" [matTooltipPosition]="'right'" class="sidenav-nav-item" >
+        <mat-icon class="sidenav-link-icon">login</mat-icon>
+        </mat-list-item>
+      </a>
+    </mat-nav-list>
+    <mat-nav-list *ngIf="isLoggedIn">
+      <a class="sidenav-nav-link" (click)="logout()">
+        <mat-list-item matTooltip="Logout" [matTooltipPosition]="'right'" class="sidenav-nav-item" >
+        <mat-icon class="sidenav-link-icon">logout</mat-icon>
+        </mat-list-item>
+      </a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">

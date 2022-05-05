@@ -74,6 +74,7 @@ export class AboutdialogComponent implements OnInit {
           this._snackBar.open("Successfully modified", "" , config);
           this.editaboutForm.reset();
           this.dialogRef.close('update');
+          window.location.reload();
       },
       error:()=>{
         let config = new MatSnackBarConfig

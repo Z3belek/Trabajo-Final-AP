@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProjectService {
-  url='http://localhost:8080/api/project';
+  url='http://localhost:8080/api/data/all/project';
   constructor(private http: HttpClient) { }
   
   getProject():Observable<any>

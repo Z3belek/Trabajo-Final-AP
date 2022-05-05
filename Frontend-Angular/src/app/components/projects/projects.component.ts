@@ -5,6 +5,7 @@ import { ProdialogComponent } from './prodialog/prodialog.component';
 import { SingleProjectComponent } from './single-project/single-project.component';
 import { ConfirmService } from 'src/app/services/confirm.service';
 import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { TokenStorageService } from '../../services/token-storage.service';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -12,13 +13,17 @@ import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnack
 })
 export class ProjectsComponent implements OnInit {
   projects: any=[];
+  isLoggedIn = false;
+  private roles: string[] = [];
+  showAdmin = false;
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   constructor(private projectService: ProjectService,
     public dialog: MatDialog,
     private confirm: ConfirmService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private tokenStorageService : TokenStorageService) { }
 
   openSingleProject(project: any) {
     this.dialog.open(SingleProjectComponent,{
@@ -39,6 +44,13 @@ export class ProjectsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.listarProjects();
+
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;  
+      this.showAdmin = this.roles.includes('ROLE_ADMIN');
+    }
   }
   listarProjects()
   {

@@ -3,7 +3,7 @@
   <div class="experience">
     <div class="experience-col1">
       <div class="experience-add">
-        <button mat-fab color="primary" (click)="openAddEdu()" matTooltip="Add Education">
+        <button mat-fab color="primary" (click)="openAddEdu()" matTooltip="Add Education" *ngIf="showAdmin">
           <mat-icon>add</mat-icon>
         </button>
       </div>
@@ -14,10 +14,10 @@
             <div class="experience-title-container">
               <h3 class="experience-timeline-title">{{education.level}}</h3>
               <div class="experience-title-buttons">
-                <button mat-icon-button (click)="openEditEdu(education)">
+                <button mat-icon-button (click)="openEditEdu(education)" *ngIf="showAdmin">
                   <mat-icon class="mini">edit</mat-icon>
                 </button>
-                <button mat-icon-button (click)="openDeleteEdu(education.id)">
+                <button mat-icon-button (click)="openDeleteEdu(education.id)" *ngIf="showAdmin">
                   <mat-icon class="mini">delete</mat-icon>
                 </button>
               </div>
@@ -31,7 +31,7 @@
     </div>
     <div class="experience-col1">
       <div class="experience-add">
-        <button mat-fab color="primary"(click)="openAddJob()" matTooltip="Add Job">
+        <button mat-fab color="primary"(click)="openAddJob()" matTooltip="Add Job" *ngIf="showAdmin">
           <mat-icon>add</mat-icon>
         </button>
       </div>
@@ -42,10 +42,10 @@
             <div class="experience-title-container">
               <h3 class="experience-timeline-title">{{experience.role}}</h3>
               <div class="experience-title-buttons">
-                <button mat-icon-button (click)="openEditJob(experience)">
+                <button mat-icon-button (click)="openEditJob(experience)" *ngIf="showAdmin">
                   <mat-icon class="mini">edit</mat-icon>
                 </button>
-                <button mat-icon-button (click)="openDeleteJob(experience.id)">
+                <button mat-icon-button (click)="openDeleteJob(experience.id)" *ngIf="showAdmin">
                   <mat-icon class="mini">delete</mat-icon>
                 </button>
               </div>
